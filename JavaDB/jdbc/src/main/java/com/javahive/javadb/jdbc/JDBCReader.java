@@ -23,9 +23,9 @@ public class JDBCReader {
     private final static String PASS = "sa";
 
     public void read() {
-        //1 - zmienne
-        Statement stmt = null;
+        //1 - potrzebujemy deklaracji pól tutaj, by później można było próbować je zamknąć
         Connection conn = null;
+        Statement stmt = null;
         try {
             //2 - ładowanie sterownika JDBC
             Class.forName(JDBC_DRIVER);
