@@ -15,7 +15,7 @@ import java.sql.Statement;
  *
  * @author mgr
  */
-public class UJDBCReader {
+public class JDBCReader {
 
     private final static String JDBC_DRIVER = "org.h2.Driver";
     private final static String DB_URL = "jdbc:h2:testJavaHive";
