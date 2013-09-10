@@ -57,7 +57,7 @@ public class JDBCReader {
             //finally block used to close resources
             try {
                 if (stmt != null) {
-                	//je�li wyst�pi�y b��dy to musimy spr�bowa� zamkn�� statement
+                	//jeśli wystąpiły błędy to musimy spróbować zamknąć statement
                     stmt.close();
                 }
             } catch (SQLException se2) {
