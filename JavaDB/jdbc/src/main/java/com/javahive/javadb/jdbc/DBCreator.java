@@ -31,8 +31,8 @@ public class DBCreator {
 			IOException, ClassNotFoundException, SQLException,
 			LiquibaseException {
 
-		Class.forName(JDBC_DRIVER);
-		Connection conn = DriverManager.getConnection(DB_URL, USER, PASS);
+		Class.forName(DB_DRIVER);
+		Connection conn = DriverManager.getConnection(DB_URL, DB_USER, DB_PASS);
 		JdbcConnection jc = new JdbcConnection(conn);
 		Database db = DatabaseFactory.getInstance()
 				.findCorrectDatabaseImplementation(jc);

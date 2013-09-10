@@ -24,9 +24,9 @@ public class JDBCReader {
         Statement stmt = null;
         try {
             //2 - ładowanie sterownika JDBC
-            Class.forName(JDBC_DRIVER);
+            Class.forName(DB_DRIVER);
             //3 - łączenie z bazą
-            conn = DriverManager.getConnection(DB_URL, USER, PASS);
+            conn = DriverManager.getConnection(DB_URL, DB_USER, DB_PASS);
             //4 - wykonanie zapytania
             stmt = conn.createStatement();
             String sql = "SELECT * FROM klienci";
