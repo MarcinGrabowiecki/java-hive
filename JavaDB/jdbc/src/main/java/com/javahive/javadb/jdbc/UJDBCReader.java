@@ -15,7 +15,7 @@ import java.sql.Statement;
  *
  * @author mgr
  */
-public class JDBCReader {
+public class UJDBCReader {
 
     private final static String JDBC_DRIVER = "org.h2.Driver";
     private final static String DB_URL = "jdbc:h2:testJavaHive";
@@ -23,14 +23,16 @@ public class JDBCReader {
     private final static String PASS = "sa";
 
     public void read() {
-    	try{
-    	
-            //1 - ładowanie sterownika JDBC
+        //1 - zmienne
+        Statement stmt = null;
+        Connection conn = null;
+        try {
+            //2 - ładowanie sterownika JDBC
             Class.forName(JDBC_DRIVER);
             //3 - łączenie z bazą
-            Connection conn = DriverManager.getConnection(DB_URL, USER, PASS);
+            conn = DriverManager.getConnection(DB_URL, USER, PASS);
             //4 - wykonanie zapytania
-            Statement stmt = conn.createStatement();
+            stmt = conn.createStatement();
             String sql = "SELECT * FROM klienci";
             ResultSet rs = stmt.executeQuery(sql);
             //5 - pobieranie wyników
@@ -45,8 +47,31 @@ public class JDBCReader {
             rs.close();
             stmt.close();
             conn.close();
-        } catch (Exception ex){
-        	ex.printStackTrace();
+        } catch (SQLException se) {
+            //Obsługa błędów JDBC
+            se.printStackTrace();
+        } catch (ClassNotFoundException e) {
+			// W przypadku nieznalezienia sterownika jdbc niewiele mo�emy zrobi�
+			e.printStackTrace();
+		} finally {
+            //finally block used to close resources
+            try {
+                if (stmt != null) {
+                	//je�li wyst�pi�y b��dy to musimy spr�bowa� zamkn�� statement
+                    stmt.close();
+                }
+            } catch (SQLException se2) {
+            	//jeśli się nie udało - nic już nie możemy zrobić
+            }
+            try {
+                if (conn != null) {
+                	//próba zamknięcia połączenia, jeśli istnieje
+                    conn.close();
+                }
+            } catch (SQLException se) {
+            	//jeśli nie udało się go zamknąć - komunikat
+                se.printStackTrace();
+            }
         }
     }
 }

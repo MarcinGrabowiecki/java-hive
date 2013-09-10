@@ -54,7 +54,7 @@ public class StartTest {
 
     @Test
     public void testJDBC() throws Exception {
-        new JDBCReader().read();
+        new UglyJDBCReader().read();
         
     }
     
