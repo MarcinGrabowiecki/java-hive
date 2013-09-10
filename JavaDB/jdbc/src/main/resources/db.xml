@@ -1,29 +1,34 @@
-<?xml version="1.0" encoding="UTF-8"?>
-
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
-         http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-2.0.xsd">
-
-	<changeSet id="1" author="marcin">
-		<dropTable tableName="klienci" />
+	xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.0.xsd">
+	
+	<changeSet author="mgr (generated)" id="1378809570831-0">
+		<preConditions>
+			<tableExists tableName="klienci"/>
+		</preConditions>
+		<dropTable tableName="klienci"/>
+	</changeSet>
+	
+	<changeSet author="mgr (generated)" id="1378809570831-1">
+ 		<dropTable tableName="klienci" />
 		<createTable tableName="klienci">
 			<column name="id" type="int" autoIncrement="true">
 				<constraints primaryKey="true" nullable="false" />
 			</column>
-			<column name="imie" type="varchar">
-				<constraints nullable="false" />
-			</column>
-			<column name="nazwisko" type="varchar">
-				<constraints nullable="false" />
-			</column>
-			<column name="wiek" type="int" />
-			<column name="aktywny" type="boolean" defaultValueBoolean="true" />
+			<column name="imie" type="VARCHAR" />
+			<column name="nazwisko" type="VARCHAR" />
+			<column name="wiek" type="VARCHAR" />
 		</createTable>
 		<insert tableName="klienci">
 			<column name="imie">Adam</column>
 			<column name="nazwisko">Kowalski</column>
+			<column name="wiek">32</column>
+		</insert>
+		<insert tableName="klienci">
+			<column name="imie">Jan</column>
+			<column name="nazwisko">Nowak</column>
+			<column name="wiek">123</column>
 		</insert>
 	</changeSet>
-
 </databaseChangeLog>

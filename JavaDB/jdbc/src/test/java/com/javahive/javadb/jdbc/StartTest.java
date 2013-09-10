@@ -5,11 +5,20 @@
  */
 package com.javahive.javadb.jdbc;
 
+import java.io.IOException;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
+import liquibase.exception.CommandLineParsingException;
+import liquibase.exception.LiquibaseException;
+
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
+
 import static org.junit.Assert.*;
 
 /**
@@ -23,6 +32,11 @@ public class StartTest {
     
     @BeforeClass
     public static void setUpClass() {
+    	try {
+			DBCreator.main(null);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
     }
     
     @AfterClass
@@ -39,7 +53,8 @@ public class StartTest {
 
 
     @Test
-    public void testMain() throws Exception {
+    public void testJDBC() throws Exception {
+        new JDBCReader().read();
         
     }
     

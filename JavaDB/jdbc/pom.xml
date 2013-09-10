@@ -6,8 +6,8 @@
 	<version>0.0.1-SNAPSHOT</version>
 	<contributors>
 		<contributor>
-			Marcin Grabowiecki
-		</contributor>
+                    <name>Marcin Grabowiecki</name>
+                </contributor>
 	</contributors>
 	<dependencies>
 		<dependency>
