@@ -27,15 +27,15 @@ public class BadJDBCReader {
         Statement stmt = null;
         Connection conn = null;
         try {
-            //2 - ³adowanie sterownika JDBC
+            //2 - ï¿½adowanie sterownika JDBC
             Class.forName(JDBC_DRIVER);
-            //3 - ³¹czenie z baz¹
+            //3 - ï¿½ï¿½czenie z bazï¿½
             conn = DriverManager.getConnection(DB_URL, USER, PASS);
             //4 - wykonanie zapytania
             stmt = conn.createStatement();
             String sql = "SELECT * FROM klienci";
             ResultSet rs = stmt.executeQuery(sql);
-            //5 - pobieranie wyników
+            //5 - pobieranie wynikï¿½w
             while (rs.next()) {
                 int id = rs.getInt("id");
                 int age = rs.getInt("wiek");
@@ -43,33 +43,33 @@ public class BadJDBCReader {
                 String last = rs.getString("nazwisko");
                 System.out.printf("%s %s\n",first,last);
             }
-            //6 - obs³uga wyj¹tków
+            //6 - obsï¿½uga wyjï¿½tkï¿½w
             rs.close();
             stmt.close();
             conn.close();
         } catch (SQLException se) {
-            //Obs³uga b³êdów jdbc
+            //Obsï¿½uga bï¿½ï¿½dï¿½w jdbc
             se.printStackTrace();
         } catch (ClassNotFoundException e) {
-			// W przypadku nieznalezienia sterownika jdbc niewiele mo¿emy zrobiæ
+			// W przypadku nieznalezienia sterownika jdbc niewiele moï¿½emy zrobiï¿½
 			e.printStackTrace();
 		} finally {
             //finally block used to close resources
             try {
                 if (stmt != null) {
-                	//jeœli wyst¹pi³y b³êdy to musimy spróbowaæ zamkn¹æ statement
+                	//jeï¿½li wystï¿½piï¿½y bï¿½ï¿½dy to musimy sprï¿½bowaï¿½ zamknï¿½ï¿½ statement
                     stmt.close();
                 }
             } catch (SQLException se2) {
-            	//jeœli siê nie uda³o - nic ju¿ nie mo¿emy zrobiæ
+            	//jeÅ›li siÄ™ nie udaÅ‚o - nic juÅ¼ nie moÅ¼emy zrobiÄ‡
             }
             try {
                 if (conn != null) {
-                	//próba zamkniêcia po³¹czenia, jeœli istnieje
+                	//prÃ³ba zamkniÄ™cia poÅ‚Ä…czenia, jeÅ›li istnieje
                     conn.close();
                 }
             } catch (SQLException se) {
-            	//jeœli nie uda³o siê go zamkn¹æ - komunikat
+            	//jeÅ›li nie udaÅ‚o siï¿½ go zamknÄ…Ä‡ - komunikat
                 se.printStackTrace();
             }
         }

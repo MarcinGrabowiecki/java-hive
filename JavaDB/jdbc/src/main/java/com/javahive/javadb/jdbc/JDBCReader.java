@@ -25,7 +25,7 @@ public class JDBCReader {
     public void read() {
     	try{
     	
-            //1 - �adowanie sterownika JDBC
+            //1 - ładowanie sterownika JDBC
             Class.forName(JDBC_DRIVER);
             //3 - łączenie z bazą
             Connection conn = DriverManager.getConnection(DB_URL, USER, PASS);
