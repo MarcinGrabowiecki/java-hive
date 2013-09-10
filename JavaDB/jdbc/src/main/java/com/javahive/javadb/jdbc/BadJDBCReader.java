@@ -27,15 +27,15 @@ public class BadJDBCReader {
         Statement stmt = null;
         Connection conn = null;
         try {
-            //2 - �adowanie sterownika JDBC
+            //2 - ładowanie sterownika JDBC
             Class.forName(JDBC_DRIVER);
-            //3 - ��czenie z baz�
+            //3 - łączenie z bazą
             conn = DriverManager.getConnection(DB_URL, USER, PASS);
             //4 - wykonanie zapytania
             stmt = conn.createStatement();
             String sql = "SELECT * FROM klienci";
             ResultSet rs = stmt.executeQuery(sql);
-            //5 - pobieranie wynik�w
+            //5 - pobieranie wyników
             while (rs.next()) {
                 int id = rs.getInt("id");
                 int age = rs.getInt("wiek");
@@ -43,12 +43,12 @@ public class BadJDBCReader {
                 String last = rs.getString("nazwisko");
                 System.out.printf("%s %s\n",first,last);
             }
-            //6 - obs�uga wyj�tk�w
+            //6 - obsługa wyjątków
             rs.close();
             stmt.close();
             conn.close();
         } catch (SQLException se) {
-            //Obs�uga b��d�w jdbc
+            //Obsługa błędów JDBC
             se.printStackTrace();
         } catch (ClassNotFoundException e) {
 			// W przypadku nieznalezienia sterownika jdbc niewiele mo�emy zrobi�
@@ -69,7 +69,7 @@ public class BadJDBCReader {
                     conn.close();
                 }
             } catch (SQLException se) {
-            	//jeśli nie udało si� go zamknąć - komunikat
+            	//jeśli nie udało się go zamknąć - komunikat
                 se.printStackTrace();
             }
         }
