@@ -17,7 +17,7 @@ import liquibase.exception.CommandLineParsingException;
 import liquibase.exception.DatabaseException;
 import liquibase.exception.LiquibaseException;
 import liquibase.resource.FileSystemResourceAccessor;
-
+import static com.javahive.javadb.jdbc.ConnectionData.*;
 /**
  * 
  * @author Marcin Grabowiecki
@@ -26,10 +26,6 @@ import liquibase.resource.FileSystemResourceAccessor;
 
 public class DBCreator {
 
-	private final static String JDBC_DRIVER = "org.h2.Driver";
-	private final static String DB_URL = "jdbc:h2:testJavaHive";
-	private final static String USER = "sa";
-	private final static String PASS = "sa";
 
 	public static void main(String[] args) throws CommandLineParsingException,
 			IOException, ClassNotFoundException, SQLException,

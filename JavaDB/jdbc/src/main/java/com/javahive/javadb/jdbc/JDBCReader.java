@@ -10,17 +10,13 @@ import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-
+import static com.javahive.javadb.jdbc.ConnectionData.*;
 /**
  *
  * @author mgr
  */
 public class JDBCReader {
 
-    private final static String JDBC_DRIVER = "org.h2.Driver";
-    private final static String DB_URL = "jdbc:h2:testJavaHive";
-    private final static String USER = "sa";
-    private final static String PASS = "sa";
 
     public void read() {
         //1 - potrzebujemy deklaracji pól tutaj, by później można było próbować je zamknąć
