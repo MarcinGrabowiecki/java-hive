@@ -25,15 +25,15 @@ public class JDBCReader {
     public void read() {
     	try{
     	
-            //1 - ³adowanie sterownika JDBC
+            //1 - ï¿½adowanie sterownika JDBC
             Class.forName(JDBC_DRIVER);
-            //3 - ³¹czenie z baz¹
+            //3 - Å‚Ä…czenie z bazÄ…
             Connection conn = DriverManager.getConnection(DB_URL, USER, PASS);
             //4 - wykonanie zapytania
             Statement stmt = conn.createStatement();
             String sql = "SELECT * FROM klienci";
             ResultSet rs = stmt.executeQuery(sql);
-            //5 - pobieranie wyników
+            //5 - pobieranie wynikÃ³w
             while (rs.next()) {
                 int id = rs.getInt("id");
                 int age = rs.getInt("wiek");
@@ -41,7 +41,7 @@ public class JDBCReader {
                 String last = rs.getString("nazwisko");
                 System.out.printf("%s %s\n",first,last);
             }
-            //6 - obs³uga wyj¹tków
+            //6 - obsÅ‚uga wyjÄ…tkÃ³w
             rs.close();
             stmt.close();
             conn.close();
