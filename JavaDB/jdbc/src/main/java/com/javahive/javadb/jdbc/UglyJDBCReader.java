@@ -24,7 +24,8 @@ public class UglyJDBCReader {
 			// 1 - ładowanie sterownika JDBC
 			Class.forName(DB_DRIVER);
 			// 3 - łączenie z bazą
-			Connection conn = DriverManager.getConnection(DB_URL, DB_USER, DB_PASS);
+			Connection conn = DriverManager.getConnection(DB_URL, DB_USER,
+					DB_PASS);
 			// 4 - wykonanie zapytania
 			Statement stmt = conn.createStatement();
 			String sql = "SELECT * FROM klienci";

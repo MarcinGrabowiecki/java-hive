@@ -2,16 +2,21 @@
 <databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.0.xsd">
-	
-	<changeSet author="mgr (generated)" id="1378809570831-0">
-		<preConditions>
-			<tableExists tableName="klienci"/>
+
+
+	<changeSet author="mgr" id="1">
+		<preConditions onFail="CONTINUE">
+			<tableExists tableName="klienci" />
 		</preConditions>
-		<dropTable tableName="klienci"/>
+<!-- 		<delete tableName="klienci"></delete> -->
 	</changeSet>
-	
-	<changeSet author="mgr (generated)" id="1378809570831-1">
- 		<dropTable tableName="klienci" />
+
+	<changeSet author="mgr" id="2">
+		<preConditions onFail="CONTINUE">
+			<not>
+				<tableExists tableName="klienci" />
+			</not>
+		</preConditions>
 		<createTable tableName="klienci">
 			<column name="id" type="int" autoIncrement="true">
 				<constraints primaryKey="true" nullable="false" />
@@ -20,6 +25,11 @@
 			<column name="nazwisko" type="VARCHAR" />
 			<column name="wiek" type="VARCHAR" />
 		</createTable>
+	</changeSet>
+
+
+
+	<changeSet author="mgr" id="3">
 		<insert tableName="klienci">
 			<column name="imie">Adam</column>
 			<column name="nazwisko">Kowalski</column>
@@ -30,5 +40,16 @@
 			<column name="nazwisko">Nowak</column>
 			<column name="wiek">123</column>
 		</insert>
+		<insert tableName="klienci">
+			<column name="imie">Włodzimierz</column>
+			<column name="nazwisko">Pucyński</column>
+			<column name="wiek">18</column>
+		</insert>
+		<insert tableName="klienci">
+			<column name="imie">Jan</column>
+			<column name="nazwisko">Pucyński</column>
+			<column name="wiek">183</column>
+		</insert>
 	</changeSet>
+
 </databaseChangeLog>

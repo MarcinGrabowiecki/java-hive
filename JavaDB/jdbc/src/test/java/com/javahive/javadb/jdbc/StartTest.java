@@ -19,6 +19,7 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
+import dbutil.DBCreator;
 import static org.junit.Assert.*;
 
 /**
@@ -31,30 +32,15 @@ public class StartTest {
     }
     
     @BeforeClass
-    public static void setUpClass() {
-    	try {
-			DBCreator.main(null);
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-    }
-    
-    @AfterClass
-    public static void tearDownClass() {
-    }
-    
-    @Before
-    public void setUp() {
-    }
-    
-    @After
-    public void tearDown() {
+    public static void setUpClass() throws ClassNotFoundException, CommandLineParsingException, IOException, SQLException, LiquibaseException {
+			new DBCreator().createTestDB();
     }
 
 
     @Test
     public void testJDBC() throws Exception {
         new UglyJDBCReader().read();
+        assertTrue(true);
         
     }
     

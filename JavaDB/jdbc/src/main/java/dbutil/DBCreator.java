@@ -1,4 +1,4 @@
-package com.javahive.javadb.jdbc;
+package dbutil;
 
 import java.io.File;
 import java.io.IOException;
@@ -18,6 +18,7 @@ import liquibase.exception.DatabaseException;
 import liquibase.exception.LiquibaseException;
 import liquibase.resource.FileSystemResourceAccessor;
 import static com.javahive.javadb.jdbc.ConnectionData.*;
+
 /**
  * 
  * @author Marcin Grabowiecki
@@ -26,19 +27,15 @@ import static com.javahive.javadb.jdbc.ConnectionData.*;
 
 public class DBCreator {
 
-
-	public static void main(String[] args) throws CommandLineParsingException,
-			IOException, ClassNotFoundException, SQLException,
-			LiquibaseException {
-
+	public void createTestDB() throws CommandLineParsingException, IOException,
+			ClassNotFoundException, SQLException, LiquibaseException {
 		Class.forName(DB_DRIVER);
 		Connection conn = DriverManager.getConnection(DB_URL, DB_USER, DB_PASS);
 		JdbcConnection jc = new JdbcConnection(conn);
 		Database db = DatabaseFactory.getInstance()
 				.findCorrectDatabaseImplementation(jc);
-		Liquibase lb = new Liquibase("src/main/java/resources/db.xml",
-				new FileSystemResourceAccessor(), db);
+		String file = "src/main/resources/db.xml";
+		Liquibase lb = new Liquibase(file, new FileSystemResourceAccessor(), db);
 		lb.update(null);
-
 	}
 }

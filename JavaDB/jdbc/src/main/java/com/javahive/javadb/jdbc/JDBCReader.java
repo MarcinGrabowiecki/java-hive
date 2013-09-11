@@ -47,13 +47,13 @@ public class JDBCReader {
             //Obsługa błędów JDBC
             se.printStackTrace();
         } catch (ClassNotFoundException e) {
-			// W przypadku nieznalezienia sterownika jdbc niewiele mo�emy zrobi�
+			// W przypadku nieznalezienia sterownika jdbc niewiele możemy zrobić
 			e.printStackTrace();
 		} finally {
             //finally block used to close resources
             try {
                 if (stmt != null) {
-                	//jeśli wystąpiły błędy to musimy spróbować zamknąć statement
+                	//jeśli wystąpiły błędy to musimy spróbować zamknąć Statement
                     stmt.close();
                 }
             } catch (SQLException se2) {
@@ -62,7 +62,7 @@ public class JDBCReader {
             try {
                 if (conn != null) {
                 	//próba zamknięcia połączenia, jeśli istnieje
-                    conn.close();
+                    conn.close();	
                 }
             } catch (SQLException se) {
             	//jeśli nie udało się go zamknąć - komunikat
