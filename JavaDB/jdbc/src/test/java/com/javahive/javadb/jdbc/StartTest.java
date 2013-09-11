@@ -19,6 +19,8 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
+import com.javahive.javadb.mybatis.KlientReader;
+
 import dbutil.DBCreator;
 import static org.junit.Assert.*;
 
@@ -42,6 +44,11 @@ public class StartTest {
         new UglyJDBCReader().read();
         assertTrue(true);
         
+    }
+    
+    @Test
+    public void testMybatis(){
+    	new KlientReader().read();    	
     }
     
 }
