@@ -5,6 +5,9 @@
  */
 package javafxapplication2;
 
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -36,6 +39,8 @@ public class JavaFXApplication2 extends Application {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
+    	ApplicationContext ctx = new ClassPathXmlApplicationContext("classpath:javafxapplication2/applicationContext.xml");
+    	ctx.getBean(SpringClass.class).test();
         launch(args);
     }
     
