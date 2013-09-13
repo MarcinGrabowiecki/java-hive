@@ -1,1 +1,7 @@
 /JavaDB/jdbc/target/
+/JavaDB/jdbc/*.h2.db
+/JavaFXapp/.classpath
+/JavaFXapp/.project
+/JavaFXapp/.settings/*
+/JavaFXapp/target/*
+
