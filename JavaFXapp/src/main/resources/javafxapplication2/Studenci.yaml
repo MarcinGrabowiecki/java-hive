@@ -1,0 +1,196 @@
+- !!javahive.domain.Student
+  imie: Adam61
+  nazwisko: Kowalski61
+  ocena: {wysokosc: 2}
+  wieczny: true
+- !!javahive.domain.Student
+  imie: Adam62
+  nazwisko: Kowalski62
+  ocena: {wysokosc: 4}
+  wieczny: true
+- !!javahive.domain.Student
+  imie: Adam63
+  nazwisko: Kowalski63
+  ocena: {wysokosc: 0}
+  wieczny: true
+- !!javahive.domain.Student
+  imie: Adam64
+  nazwisko: Kowalski64
+  ocena: {wysokosc: 1}
+  wieczny: true
+- !!javahive.domain.Student
+  imie: Adam65
+  nazwisko: Kowalski65
+  ocena: {wysokosc: 2}
+  wieczny: true
+- !!javahive.domain.Student
+  imie: Adam66
+  nazwisko: Kowalski66
+  ocena: {wysokosc: 2}
+  wieczny: true
+- !!javahive.domain.Student
+  imie: Adam67
+  nazwisko: Kowalski67
+  ocena: {wysokosc: 3}
+  wieczny: true
+- !!javahive.domain.Student
+  imie: Adam68
+  nazwisko: Kowalski68
+  ocena: {wysokosc: 0}
+  wieczny: true
+- !!javahive.domain.Student
+  imie: Adam69
+  nazwisko: Kowalski69
+  ocena: {wysokosc: 0}
+  wieczny: true
+- !!javahive.domain.Student
+  imie: Adam70
+  nazwisko: Kowalski70
+  ocena: {wysokosc: 0}
+  wieczny: true
+- !!javahive.domain.Student
+  imie: Adam71
+  nazwisko: Kowalski71
+  ocena: {wysokosc: 3}
+  wieczny: true
+- !!javahive.domain.Student
+  imie: Adam72
+  nazwisko: Kowalski72
+  ocena: {wysokosc: 4}
+  wieczny: true
+- !!javahive.domain.Student
+  imie: Adam73
+  nazwisko: Kowalski73
+  ocena: {wysokosc: 5}
+  wieczny: true
+- !!javahive.domain.Student
+  imie: Adam74
+  nazwisko: Kowalski74
+  ocena: {wysokosc: 0}
+  wieczny: true
+- !!javahive.domain.Student
+  imie: Adam75
+  nazwisko: Kowalski75
+  ocena: {wysokosc: 2}
+  wieczny: true
+- !!javahive.domain.Student
+  imie: Adam76
+  nazwisko: Kowalski76
+  ocena: {wysokosc: 3}
+  wieczny: true
+- !!javahive.domain.Student
+  imie: Adam77
+  nazwisko: Kowalski77
+  ocena: {wysokosc: 3}
+  wieczny: true
+- !!javahive.domain.Student
+  imie: Adam78
+  nazwisko: Kowalski78
+  ocena: {wysokosc: 3}
+  wieczny: true
+- !!javahive.domain.Student
+  imie: Adam79
+  nazwisko: Kowalski79
+  ocena: {wysokosc: 3}
+  wieczny: true
+- !!javahive.domain.Student
+  imie: Adam80
+  nazwisko: Kowalski80
+  ocena: {wysokosc: 5}
+  wieczny: true
+- !!javahive.domain.Student
+  imie: Adam81
+  nazwisko: Kowalski81
+  ocena: {wysokosc: 5}
+  wieczny: true
+- !!javahive.domain.Student
+  imie: Adam82
+  nazwisko: Kowalski82
+  ocena: {wysokosc: 1}
+  wieczny: true
+- !!javahive.domain.Student
+  imie: Adam83
+  nazwisko: Kowalski83
+  ocena: {wysokosc: 2}
+  wieczny: true
+- !!javahive.domain.Student
+  imie: Adam84
+  nazwisko: Kowalski84
+  ocena: {wysokosc: 3}
+  wieczny: true
+- !!javahive.domain.Student
+  imie: Adam85
+  nazwisko: Kowalski85
+  ocena: {wysokosc: 0}
+  wieczny: true
+- !!javahive.domain.Student
+  imie: Adam86
+  nazwisko: Kowalski86
+  ocena: {wysokosc: 4}
+  wieczny: true
+- !!javahive.domain.Student
+  imie: Adam87
+  nazwisko: Kowalski87
+  ocena: {wysokosc: 2}
+  wieczny: true
+- !!javahive.domain.Student
+  imie: Adam88
+  nazwisko: Kowalski88
+  ocena: {wysokosc: 4}
+  wieczny: true
+- !!javahive.domain.Student
+  imie: Adam89
+  nazwisko: Kowalski89
+  ocena: {wysokosc: 1}
+  wieczny: true
+- !!javahive.domain.Student
+  imie: Adam90
+  nazwisko: Kowalski90
+  ocena: {wysokosc: 2}
+  wieczny: true
+- !!javahive.domain.Student
+  imie: Adam91
+  nazwisko: Kowalski91
+  ocena: {wysokosc: 1}
+  wieczny: true
+- !!javahive.domain.Student
+  imie: Adam92
+  nazwisko: Kowalski92
+  ocena: {wysokosc: 5}
+  wieczny: true
+- !!javahive.domain.Student
+  imie: Adam93
+  nazwisko: Kowalski93
+  ocena: {wysokosc: 1}
+  wieczny: true
+- !!javahive.domain.Student
+  imie: Adam94
+  nazwisko: Kowalski94
+  ocena: {wysokosc: 0}
+  wieczny: true
+- !!javahive.domain.Student
+  imie: Adam95
+  nazwisko: Kowalski95
+  ocena: {wysokosc: 3}
+  wieczny: true
+- !!javahive.domain.Student
+  imie: Adam96
+  nazwisko: Kowalski96
+  ocena: {wysokosc: 2}
+  wieczny: true
+- !!javahive.domain.Student
+  imie: Adam97
+  nazwisko: Kowalski97
+  ocena: {wysokosc: 3}
+  wieczny: true
+- !!javahive.domain.Student
+  imie: Adam98
+  nazwisko: Kowalski98
+  ocena: {wysokosc: 1}
+  wieczny: true
+- !!javahive.domain.Student
+  imie: Adam99
+  nazwisko: Kowalski99
+  ocena: {wysokosc: 2}
+  wieczny: true
+  
