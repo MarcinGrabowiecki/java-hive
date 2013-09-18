@@ -10,7 +10,7 @@
   <children>
     <Button fx:id="button" onAction="#handleButtonAction" text="Click Me!" AnchorPane.bottomAnchor="4.0" AnchorPane.rightAnchor="21.0" />
     <Label fx:id="label" layoutX="126.0" layoutY="120.0" minHeight="16.0" minWidth="69.0" />
-    <TableView fx:id="table" layoutX="14.0" layoutY="20.0" prefHeight="290.0" prefWidth="387.0" />
+    <TableView fx:id="table" layoutX="14.0" layoutY="20.0" prefHeight="290.0" prefWidth="456.0" />
     <Pane fx:id="pane" layoutX="14.0" layoutY="322.0" prefHeight="154.0" prefWidth="456.0" />
   </children>
 </AnchorPane>

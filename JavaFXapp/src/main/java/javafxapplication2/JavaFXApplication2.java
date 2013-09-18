@@ -5,6 +5,8 @@
  */
 package javafxapplication2;
 
+import java.net.URL;
+
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
@@ -13,6 +15,9 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import javafx.util.Builder;
+import javafx.util.BuilderFactory;
+import javafx.util.Callback;
 
 /**
  *
@@ -22,10 +27,39 @@ public class JavaFXApplication2 extends Application {
     
     @Override
     public void start(Stage stage) throws Exception {
-        Parent root = FXMLLoader.load(getClass().getResource("Simple.fxml"));
+
+		final ApplicationContext ctx = new ClassPathXmlApplicationContext(
+				"classpath:javafxapplication2/applicationContext.xml");
+    	
+    	URL location = getClass().getResource("Simple.fxml");
+    	FXMLLoader fxmlLoader = new FXMLLoader();
+    	fxmlLoader.setLocation(location);
+    	
+    	fxmlLoader.setControllerFactory(new Callback<Class<?>, Object>() {
+			public Object call(Class<?> arg0) {
+				return ctx.getBean(arg0);
+			}
+		});
+    	
+    	Parent root = (Parent) fxmlLoader.load(location.openStream());
+
+    	fxmlLoader.setController("ssssssssssss");
+    	
         Scene scene = new Scene(root);
         stage.setScene(scene);
         stage.show();
+//    	
+//    	FXMLLoader fxml=new FXMLLoader();
+//    	fxml.setControllerFactory(new Callback<Class<?>, Object>() {			
+//			public Object call(Class<?> arg0) {
+//				System.out.println("---------------------"+arg0);
+//				return null;
+//			}
+//		});
+//        Parent root = fxml.load(getClass().getResource("Simple.fxml"));
+//        Scene scene = new Scene(root);
+//        stage.setScene(scene);
+//        stage.show();
     }
 
     /**

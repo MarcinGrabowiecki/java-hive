@@ -9,13 +9,12 @@ import java.net.URL;
 import java.util.List;
 import java.util.ResourceBundle;
 
-import org.springframework.context.ApplicationContext;
-import org.springframework.context.support.ClassPathXmlApplicationContext;
+import javax.inject.Inject;
+
+import org.springframework.stereotype.Component;
 
 import com.dooapp.fxform.FXForm;
 
-import javafx.beans.property.SimpleObjectProperty;
-import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
@@ -24,20 +23,17 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
-import javafx.scene.control.Tab;
 import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableColumn.CellDataFeatures;
 import javafx.scene.control.TableView;
-import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.Pane;
-import javafx.util.Callback;
 import javahive.domain.Student;
 
 /**
  * 
  * @author mgr
  */
+@Component
 public class SimpleController implements Initializable {
 
 	@FXML
@@ -53,12 +49,13 @@ public class SimpleController implements Initializable {
 
 	@FXML
 	private Pane pane;
-
+	
+	@Inject
+	private SpringClass springClass;
 
 	public void initialize(URL arg0, ResourceBundle arg1) {
-		ApplicationContext ctx = new ClassPathXmlApplicationContext(
-				"classpath:javafxapplication2/applicationContext.xml");
-		List<Student> student = ctx.getBean(SpringClass.class).test();
+
+		List<Student> student = springClass.test();
 		ObservableList<Student> observableList = FXCollections
 				.observableList(student);
 		System.out.println(table);

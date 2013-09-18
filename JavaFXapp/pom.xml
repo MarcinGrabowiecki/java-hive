@@ -6,6 +6,28 @@
 	<artifactId>JavaFXapp</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>exec-maven-plugin</artifactId>
+				<version>1.1</version>
+				<executions>
+					<execution>
+						<id>my-execution</id>
+						<phase>package</phase>
+						<goals>
+							<goal>java</goal>
+						</goals>
+					</execution>
+				</executions>
+				<configuration>
+					<mainClass>javafxapplication2.JavaFXApplication2</mainClass>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+
 	<repositories>
 		<repository>
 			<id>MarcinGrabowiecki-github</id>
@@ -14,7 +36,10 @@
 		</repository>
 	</repositories>
 
+
+
 	<dependencies>
+
 
 		<dependency>
 			<groupId>com.sun</groupId>
@@ -90,6 +115,12 @@
 			<groupId>com.fixy</groupId>
 			<artifactId>fixy-jpa</artifactId>
 			<version>2.1</version>
+		</dependency>
+
+		<dependency>
+			<groupId>javax.inject</groupId>
+			<artifactId>javax.inject</artifactId>
+			<version>1</version>
 		</dependency>
 
 	</dependencies>
