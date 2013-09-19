@@ -41,25 +41,10 @@ public class JavaFXApplication2 extends Application {
 			}
 		});
     	
-    	Parent root = (Parent) fxmlLoader.load(location.openStream());
-
-    	fxmlLoader.setController("ssssssssssss");
-    	
+    	Parent root = (Parent) fxmlLoader.load(location.openStream());    	
         Scene scene = new Scene(root);
         stage.setScene(scene);
         stage.show();
-//    	
-//    	FXMLLoader fxml=new FXMLLoader();
-//    	fxml.setControllerFactory(new Callback<Class<?>, Object>() {			
-//			public Object call(Class<?> arg0) {
-//				System.out.println("---------------------"+arg0);
-//				return null;
-//			}
-//		});
-//        Parent root = fxml.load(getClass().getResource("Simple.fxml"));
-//        Scene scene = new Scene(root);
-//        stage.setScene(scene);
-//        stage.show();
     }
 
     /**
@@ -71,7 +56,11 @@ public class JavaFXApplication2 extends Application {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
+    	try{
         launch(args);
+    	}catch(Exception ex){
+    		ex.printStackTrace();
+    	}
     }
     
 }

@@ -1,0 +1,6 @@
+- !package javahive.domain
+
+- Przedmiot(matematyka): 
+    nazwa: Matematyka
+- Przedmiot(biologia):
+    nazwa: Biologia

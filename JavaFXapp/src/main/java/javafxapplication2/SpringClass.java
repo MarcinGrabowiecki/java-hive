@@ -7,6 +7,7 @@ import java.util.concurrent.TimeUnit;
 
 import javahive.domain.Finder;
 import javahive.domain.Ocena;
+import javahive.domain.Przedmiot;
 import javahive.domain.Student;
 
 import javax.inject.Inject;
@@ -44,17 +45,20 @@ public class SpringClass {
 	public List<Student> test(){
 		
 		Stopwatch watch = new Stopwatch().start();
-		Fixy fixtures = new JpaFixyBuilder(entityManager).mergeEntities().withDefaultPackage("javafxapplication2").useFieldAccess().build();
+		Fixy fixtures = new JpaFixyBuilder(entityManager).withDefaultPackage("javafxapplication2").useFieldAccess().build();
 		//fixtures.load("pets.yaml");
-		fixtures.load("owners-fieldaccess.yaml");
+		//fixtures.load("owners-fieldaccess.yaml");
 		//fixtures.load("owners.yaml");
-		fixtures.load("javafxapplication2/Studenci1.yaml");
-		//fixtures.load("orders.yaml");
-		//fixtures.load(new String[]{""});
+		//fixtures.load(new String[]{"javafxapplication2/Studenci.yaml","javafxapplication2/Przedmioty.yaml","javafxapplication2/Oceny.yaml"});
+		
+		//fixtures.load(new String[]{"pet_types.yaml","pets.yaml"});
+		//fixtures.load("pets.yaml");
+		
+		fixtures.load("javafxapplication2/Studenci.yaml","javafxapplication2/Przedmioty.yaml","javafxapplication2/Oceny.yaml");
+
 		System.out.printf("Załadowane dane w %d sekund\n\n",watch.stop().elapsedTime(TimeUnit.SECONDS));
 
-		Query query = entityManager.createQuery("SELECT s from Student as s");		
-		System.out.println(query.getResultList().size());
+		System.out.println(finder.findAll(Przedmiot.class).size());
 		
 		return finder.findAll(Student.class);
 		}

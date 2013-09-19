@@ -1,9 +1,14 @@
 package javahive.domain;
 
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
+import javax.persistence.Transient;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -14,10 +19,11 @@ import lombok.Setter;
 @AllArgsConstructor
 @Entity
 public class Student extends BaseEntity {
+	public Student(){};
 	private String imie;
 	private String nazwisko;
 	private boolean wieczny;
-	@ManyToOne
-	private Ocena ocena;
-	public Student(){};
+	@OneToMany(mappedBy="student",fetch=FetchType.EAGER)
+	private List<Ocena> ocena=new ArrayList<Ocena>();
+
 }

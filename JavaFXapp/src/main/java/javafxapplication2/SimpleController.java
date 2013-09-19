@@ -1,5 +1,4 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
@@ -74,7 +73,7 @@ public class SimpleController implements Initializable {
 		table.setItems(observableList);
 
 		final FXForm<Student> f = new FXForm();
-		//pane.getChildren().clear();
+		pane.getChildren().clear();
 		pane.getChildren().add(f);
 
 		table.getSelectionModel().selectedItemProperty()
@@ -82,7 +81,6 @@ public class SimpleController implements Initializable {
 					public void changed(
 							ObservableValue<? extends Student> arg0,
 							Student arg1, Student nowyWybor) {
-
 						f.setSource(nowyWybor);
 					}
 				});
