@@ -33,7 +33,7 @@ import javahive.domain.Student;
  * @author mgr
  */
 @Component
-public class SimpleController implements Initializable {
+public class Controller implements Initializable {
 
 	@FXML
 	private TableView<Student> table;

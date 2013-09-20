@@ -12,16 +12,14 @@ import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
 
 @Component
-public class Finder<P>{
+public class Finder{
 	
 	@PersistenceContext
 	public EntityManager entityManager;
 	
 	public Finder(){}
-
+	
 	public <T> List<T> findAll(Class <T> c){
-		
-		
 		CriteriaBuilder builder = entityManager.getCriteriaBuilder();
 		CriteriaQuery<T> criteria = builder.createQuery(c);
 		Root<T> entityRoot = criteria.from(c);

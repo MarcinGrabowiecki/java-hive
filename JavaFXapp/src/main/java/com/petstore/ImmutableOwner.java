@@ -4,7 +4,7 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 
-@Entity
+//@Entity
 public class ImmutableOwner {
 
     @javax.persistence.Id @GeneratedValue

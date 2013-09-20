@@ -4,11 +4,14 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Transient;
+
+import com.google.common.collect.Lists;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -23,7 +26,6 @@ public class Student extends BaseEntity {
 	private String imie;
 	private String nazwisko;
 	private boolean wieczny;
-	@OneToMany(mappedBy="student",fetch=FetchType.EAGER)
-	private List<Ocena> ocena=new ArrayList<Ocena>();
-
+	@OneToMany(mappedBy="student", cascade = CascadeType.ALL)
+	private List<Ocena> oceny=Lists.newArrayList();
 }

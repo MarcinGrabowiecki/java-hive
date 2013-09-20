@@ -23,7 +23,7 @@ import javafx.util.Callback;
  *
  * @author mgr
  */
-public class JavaFXApplication2 extends Application {
+public class Launcher extends Application {
     
     @Override
     public void start(Stage stage) throws Exception {

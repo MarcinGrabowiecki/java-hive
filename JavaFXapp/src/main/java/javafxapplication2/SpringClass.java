@@ -5,6 +5,7 @@ import java.util.List;
 import java.util.Random;
 import java.util.concurrent.TimeUnit;
 
+import javahive.domain.DBFiller;
 import javahive.domain.Finder;
 import javahive.domain.Ocena;
 import javahive.domain.Przedmiot;
@@ -41,31 +42,14 @@ public class SpringClass {
 	@Inject
 	Finder finder;
 	
+	@Inject
+	DBFiller dbFiller;
+	
 	@Transactional
 	public List<Student> test(){
-		
-		Stopwatch watch = new Stopwatch().start();
-		Fixy fixtures = new JpaFixyBuilder(entityManager).withDefaultPackage("javafxapplication2").useFieldAccess().build();
-		//fixtures.load("pets.yaml");
-		//fixtures.load("owners-fieldaccess.yaml");
-		//fixtures.load("owners.yaml");
-		//fixtures.load(new String[]{"javafxapplication2/Studenci.yaml","javafxapplication2/Przedmioty.yaml","javafxapplication2/Oceny.yaml"});
-		
-		//fixtures.load(new String[]{"pet_types.yaml","pets.yaml"});
-		//fixtures.load("pets.yaml");
-		
-		fixtures.load("javafxapplication2/Studenci.yaml","javafxapplication2/Przedmioty.yaml","javafxapplication2/Oceny.yaml");
-
-		System.out.printf("Załadowane dane w %d sekund\n\n",watch.stop().elapsedTime(TimeUnit.SECONDS));
-
-		System.out.println(finder.findAll(Przedmiot.class).size());
+		dbFiller.fill();
 		
 		return finder.findAll(Student.class);
 		}
 
-	public void setApplicationContext(ApplicationContext applicationContext)
-			throws BeansException {
-		// TODO Auto-generated method stub
-		
-	}
 }
