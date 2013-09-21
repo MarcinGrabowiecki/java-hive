@@ -43,6 +43,7 @@ public class Controller implements Initializable {
 
 	@FXML
 	private void handleButtonAction(ActionEvent event) {
+		System.out.println("ok!!");
 		label.setText("Hello World!");
 	}
 
@@ -57,7 +58,6 @@ public class Controller implements Initializable {
 		List<Student> student = springClass.test();
 		ObservableList<Student> observableList = FXCollections
 				.observableList(student);
-		System.out.println(table);
 		TableColumn<Student, String> firstNameCol = new TableColumn<Student, String>(
 				"First Name");
 		firstNameCol
@@ -81,7 +81,8 @@ public class Controller implements Initializable {
 					public void changed(
 							ObservableValue<? extends Student> arg0,
 							Student arg1, Student nowyWybor) {
-						f.setSource(nowyWybor);
+							f.setSource(nowyWybor);
+							System.out.println(nowyWybor);
 					}
 				});
 	}
