@@ -42,12 +42,12 @@ public class SpringClass {
 	@Inject
 	Finder finder;
 	
-	@Inject
-	DBFiller dbFiller;
+	//@Inject
+	//DBFiller dbFiller;
 	
 	@Transactional
 	public List<Student> test(){
-		dbFiller.fill();
+		//dbFiller.fill();
 		
 		return finder.findAll(Student.class);
 		}

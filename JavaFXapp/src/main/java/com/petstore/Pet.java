@@ -8,7 +8,7 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 import java.sql.Date;
 
-//@Entity
+@Entity
 public class Pet {
     @Id @GeneratedValue
     Integer id;

@@ -24,8 +24,8 @@ import lombok.Setter;
 public class Ocena extends BaseEntity{
 	public Ocena(){};
 	private String wysokosc;
-	@ManyToOne
+	@ManyToOne(optional = true)
 	private Student student;
-	@ManyToOne
+	@ManyToOne(optional = true)
 	private Przedmiot przedmiot;
 }

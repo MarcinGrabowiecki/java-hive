@@ -5,3 +5,5 @@
 /JavaFXapp/.settings/*
 /JavaFXapp/target/*
 
+/JavaFXapp/*.db
+/JavaFXapp/src/main/resources/rebel.xml

@@ -9,7 +9,7 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import java.util.List;
 
-//@Entity
+@Entity
 public class PetType {
     @Id @GeneratedValue
     Integer id;

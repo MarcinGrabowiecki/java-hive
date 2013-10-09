@@ -1,5 +1,7 @@
 - !package javahive.domain
 
+- !import javafxapplication2/Oceny.yaml
+
 - Przedmiot(matematyka): 
     nazwa: Matematyka
 - Przedmiot(biologia):

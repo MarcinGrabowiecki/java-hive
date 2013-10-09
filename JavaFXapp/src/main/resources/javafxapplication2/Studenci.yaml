@@ -1,5 +1,7 @@
 - !package javahive.domain
 
+- !import javafxapplication2/Oceny.yaml
+
 - Student(george):
     imie: George
     nazwisko: Washington
