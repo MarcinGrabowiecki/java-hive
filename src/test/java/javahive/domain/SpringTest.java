@@ -22,13 +22,6 @@ import org.springframework.test.context.transaction.TransactionConfiguration;
 import org.springframework.transaction.annotation.Transactional;
 //import static org.hamcrest.CoreMatchers.is;
 
-
-
-
-
-import com.petstore.Pet;
-import com.petstore.PetType;
-
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations="classpath:testApplicationContext.xml")
 @TransactionConfiguration(transactionManager = "transactionManager", defaultRollback = true)
@@ -77,4 +70,8 @@ public class SpringTest {
 		assertThat(s.getOceny().size(),is(1));
 		System.out.println(s.getOceny());
 	}
+
+    public void powinienZwrocicWieleIndeksow(){
+        Indeks indeksy=finder.findAll(Indeks.class);
+    }
 }
