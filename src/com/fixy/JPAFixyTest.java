@@ -114,11 +114,8 @@ public class JPAFixyTest {
         };
 
         fixtures.addProcessor(createPetOwner);
-
         fixtures.load("pets.yaml");
-
         User petOwner = petstore.createQuery("select u from User u  where u.name = 'Fido'", User.class).getSingleResult();
-
         assertThat(petOwner.getName(), is("Fido"));
     }
 }

@@ -1,16 +1,12 @@
 package javahive.domain;
 
-import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
-import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
-import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
-import javax.persistence.Transient;
 
+import infrastruktura.BaseEntity;
 import org.hibernate.annotations.Fetch;
 
 import com.google.common.collect.Lists;

@@ -8,12 +8,10 @@ import java.util.List;
 
 import javax.inject.Inject;
 import javax.persistence.EntityManager;
-import javax.persistence.FlushModeType;
 import javax.persistence.PersistenceContext;
 
-import lombok.Setter;
+import infrastruktura.GenericFinder;
 
-import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.test.context.ContextConfiguration;
@@ -23,12 +21,6 @@ import org.springframework.transaction.annotation.Transactional;
 //import static org.hamcrest.CoreMatchers.is;
 
 
-
-
-
-import com.petstore.Pet;
-import com.petstore.PetType;
-
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations="classpath:testApplicationContext.xml")
 @TransactionConfiguration(transactionManager = "transactionManager", defaultRollback = true)
@@ -37,18 +29,18 @@ public class SpringTest {
 		
 	@PersistenceContext
 	private EntityManager entityManager;
-	@Inject Finder finder;
+	@Inject
+    GenericFinder genericFinder;
 	
 	@Test
 	public void sprawdzLiczbeStudentow(){
-		assertThat(finder.findAll(Student.class).size(),is(2));
+		assertThat(genericFinder.findAll(Student.class).size(),is(5));
 		Student s=new Student();
 		s.setImie("Jan");
 		s.setNazwisko("Kwas");
 		entityManager.persist(s);
-		assertThat(finder.findAll(Student.class).size(),is(3));
+		assertThat(genericFinder.findAll(Student.class).size(),is(6));
 	}
-	
 	
     @Test
     public void testPet() {
@@ -66,15 +58,27 @@ public class SpringTest {
 	
     @Test
     public void sprawdzLiczbeOcen(){
-    	List<Ocena> oc=finder.findAll(Ocena.class);
+    	List<Ocena> oc= genericFinder.findAll(Ocena.class);
     	System.out.println("$$$"+oc.size());
     }
     
 	@Test
 	public void sprawdzOceny(){
-		Student s=finder.findAll(Student.class).get(0);
+		Student s= genericFinder.findAll(Student.class).get(0);
 		System.out.println("***"+s.getImie());		
 		assertThat(s.getOceny().size(),is(1));
 		System.out.println(s.getOceny());
 	}
+
+
+    @Test
+    public void daneStudentaPowinnySieAktualizowac(){
+        Student s= genericFinder.findAll(Student.class).get(0);
+        System.out.println("***"+s.getImie());
+        s.setImie("Władimir");
+        entityManager.persist(s);
+        s= genericFinder.findAll(Student.class).get(0);
+        System.out.println("***"+s.getImie());
+        s.getC();
+    }
 }

@@ -7,6 +7,22 @@
     nazwisko: Washington
     wieczny: true
 - Student(adam):
-    imie: Grzegorz
-    nazwisko: Waszyngton
+    imie: Adam
+    nazwisko: Nowak
+    wieczny: false
+- Student(paweł):
+    imie: Paweł
+    nazwisko: Bugajski
+    wieczny: false
+- Student(wojciech):
+    imie: Wojciech
+    nazwisko: Ogiński
+    wieczny: false
+- Student(sebastian):
+    imie: Sebastian
+    nazwisko: Krawczyk
+    wieczny: false
+- Student(krzysztof):
+    imie: Krzysztof
+    nazwisko: Szozda
     wieczny: false
