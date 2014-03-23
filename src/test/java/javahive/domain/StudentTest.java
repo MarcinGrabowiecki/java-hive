@@ -35,7 +35,6 @@ public class StudentTest {
 	
 	@Test
 	public void sprawdzLiczbeStudentow(){
-        entityManager.getCriteriaBuilder().createQuery(Student.class).
 		assertThat(finder.findAll(Student.class).size(), is(2));
 		Student s=new Student();
 		s.setImie("Jan");
