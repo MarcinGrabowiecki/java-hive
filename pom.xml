@@ -54,18 +54,15 @@
 		</repository>
 	</repositories>
 
-
-
 	<dependencies>
 
-
-		<dependency>
+		<!--dependency>
 			<groupId>com.sun</groupId>
 			<artifactId>tools</artifactId>
 			<version>1</version>
 			<scope>system</scope>
 			<systemPath>${java.home}\lib\jfxrt.jar</systemPath>
-		</dependency>
+		</dependency-->
 
 		<dependency>
 			<groupId>org.springframework</groupId>
