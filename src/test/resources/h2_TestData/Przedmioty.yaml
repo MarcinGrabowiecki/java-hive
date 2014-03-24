@@ -1,6 +1,6 @@
 - !package javahive.domain
 
-- !import javafxapplication2/Oceny.yaml
+- !import h2_TestData/Oceny.yaml
 
 - Przedmiot(matematyka): 
     nazwa: Matematyka
