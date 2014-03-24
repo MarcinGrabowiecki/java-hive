@@ -33,14 +33,14 @@ public class DBFiller implements ApplicationContextAware{
 		EntityManager entityManager = applicationContext.getBean(EntityManagerFactory.class).createEntityManager();
 		EntityTransaction t = entityManager.getTransaction();
 		t.begin();
-		Fixy fixtures = new JpaFixyBuilder(entityManager).withDefaultPackage("javafxapplication2").useFieldAccess().build();
+		Fixy fixtures = new JpaFixyBuilder(entityManager).withDefaultPackage("h2_TestData").useFieldAccess().build();
 		//fixtures.load("javafxapplication2/Studenci.yaml","javafxapplication2/Przedmioty.yaml","javafxapplication2/Oceny.yaml");
 		//fixtures.load("javafxapplication2/Studenci.yaml","pet_types.yaml","pets.yaml");
 		//fixtures.load("javafxapplication2/Studenci.yaml","javafxapplication2/Przedmioty.yaml","javafxapplication2/Oceny.yaml","pet_types.yaml","pets.yaml");
-		fixtures.load("javafxapplication2/Studenci.yaml");
-		fixtures.load("javafxapplication2/Przedmioty.yaml");
-		fixtures.load("javafxapplication2/Oceny.yaml");
-        fixtures.load("javafxapplication2/Indeksy.yaml");
+		fixtures.load("h2_TestData/Studenci.yaml");
+		fixtures.load("h2_TestData/Przedmioty.yaml");
+		fixtures.load("h2_TestData/Oceny.yaml");
+        fixtures.load("h2_TestData/Indeksy.yaml");
 		//System.out.printf("załadowano %d studentów\n",finder.findAll(Student.class).size());
 		//System.out.printf("załadowano %d ocen\n",finder.findAll(Ocena.class).size());
 		//for(Student s:finder.findAll(Student.class)){
