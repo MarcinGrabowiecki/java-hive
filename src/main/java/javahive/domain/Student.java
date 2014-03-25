@@ -18,7 +18,6 @@ import lombok.Setter;
 
 @Getter
 @Setter
-@AllArgsConstructor
 @Entity
 public class Student extends BaseEntity {
 	public Student(){};
