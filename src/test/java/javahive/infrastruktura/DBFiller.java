@@ -1,5 +1,6 @@
 package javahive.infrastruktura;
 
+import org.hibernate.Session;
 import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.InitializingBean;
 import org.springframework.context.ApplicationContext;
@@ -16,43 +17,30 @@ import javax.inject.Inject;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.EntityTransaction;
+import javax.persistence.PersistenceContext;
 
 
 @Component
 public class DBFiller implements ApplicationContextAware{
 
-	//@PersistenceContext
-	//private EntityManager entityManager;
-
 	@Inject
-    Finder finder;
+    private Finder finder;
+
+    @Inject
+    private EntityManagerFactory entityManagerFactory;
 
 	@PostConstruct
 	public void fill(){
-
-		EntityManager entityManager = applicationContext.getBean(EntityManagerFactory.class).createEntityManager();
-		EntityTransaction t = entityManager.getTransaction();
-		t.begin();
+        EntityManager entityManager=entityManagerFactory.createEntityManager();
+		EntityTransaction transaction = entityManager.getTransaction();
+		transaction.begin();
 		Fixy fixtures = new JpaFixyBuilder(entityManager).withDefaultPackage("h2_TestData").useFieldAccess().build();
-		//fixtures.load("javafxapplication2/Studenci.yaml","javafxapplication2/Przedmioty.yaml","javafxapplication2/Oceny.yaml");
-		//fixtures.load("javafxapplication2/Studenci.yaml","pet_types.yaml","pets.yaml");
-		//fixtures.load("javafxapplication2/Studenci.yaml","javafxapplication2/Przedmioty.yaml","javafxapplication2/Oceny.yaml","pet_types.yaml","pets.yaml");
 		fixtures.load("h2_TestData/Studenci.yaml");
 		fixtures.load("h2_TestData/Przedmioty.yaml");
 		fixtures.load("h2_TestData/Oceny.yaml");
         fixtures.load("h2_TestData/Indeksy.yaml");
-		//System.out.printf("załadowano %d studentów\n",finder.findAll(Student.class).size());
-		//System.out.printf("załadowano %d ocen\n",finder.findAll(Ocena.class).size());
-		//for(Student s:finder.findAll(Student.class)){
-			//System.out.printf("student %s ma %d ocen \n",s.getImie(),s.getOceny().size());
-		//}
-		//for(Ocena o:finder.findAll(Ocena.class)){
-			//System.out.printf("ocena %s należy do studenta %s \n",o.getWysokosc(),o.getStudent().getImie());
-		//}		
-
-		t.commit();
+		transaction.commit();
 		entityManager.close();
-		System.out.println("----------------------------------------------------------------------");
 	}
 
 
