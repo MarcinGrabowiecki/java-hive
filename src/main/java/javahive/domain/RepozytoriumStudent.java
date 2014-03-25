@@ -2,10 +2,11 @@ package javahive.domain;
 
 import java.util.List;
 
-/**
- * Created by m on 2014-03-25.
- */
+
 public interface RepozytoriumStudent {
-    Student getStudentPoNazwisku(String nazwisko);
+	List<Student> getStudenciPoNazwisku_HQL(String nazwisko);
+	List<Student> getStudenciPoNazwisku_JPQL(String nazwisko);
+	List<Student> getStudenciPoNazwisku_CRITERIA(String nazwisko);
+    
     List<Student> getStudenciPoNazwiskuZaczynajacymSieOdLiter(String nazwisko);
 }

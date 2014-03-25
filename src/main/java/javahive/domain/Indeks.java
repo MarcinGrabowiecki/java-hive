@@ -9,9 +9,6 @@ import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.OneToOne;
 
-/**
- * Created by m on 2014-03-21.
- */
 
 @Data
 @Entity
